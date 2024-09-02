@@ -11,7 +11,7 @@ const assetConstants = {
   review: "/assets/png/review.png",
   services: "/assets/png/services.png",
   webFlow: "/assets/png/webflow-black.png",
-  
+  relume: "/assets/png/relume-black.png",
 };
 
 

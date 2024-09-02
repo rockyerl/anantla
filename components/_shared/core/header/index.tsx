@@ -4,10 +4,8 @@ import {
   useScroll,
   useTransform,
 } from "framer-motion";
-import Image from "next/image";
 import { useRouter } from "next/router";
 import { useState } from "react";
-import { BsGlobe, BsSearch } from "react-icons/bs";
 
 const Header: React.FC = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
@@ -18,8 +16,8 @@ const Header: React.FC = () => {
     setIsDrawerOpen(!isDrawerOpen);
   };
 
-  const handleNavigation = (hash: string) => {
-    router.push(hash, undefined, { shallow: true, scroll: false });
+  const handleNavigation = (path: string) => {
+    router.push(path);
   };
 
   const backgroundColor = useTransform(
@@ -35,7 +33,7 @@ const Header: React.FC = () => {
     >
       <div
         className="flex justify-center items-center group cursor-pointer"
-        onClick={() => handleNavigation("#home")}
+        onClick={() => handleNavigation("/")}
       >
         <span className="text-3xl">A</span>
         <span className="text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -46,7 +44,7 @@ const Header: React.FC = () => {
         <ul className="flex w-full justify-start gap-24">
           <li
             className="group cursor-pointer"
-            onClick={() => handleNavigation("#services")}
+            onClick={() => handleNavigation("/")}
           >
             <span className="font-medium text-lg relative">
               About
@@ -55,7 +53,7 @@ const Header: React.FC = () => {
           </li>
           <li
             className="group cursor-pointer"
-            onClick={() => handleNavigation("#whyChooseUs")}
+            onClick={() => handleNavigation("/for-jobseekers")}
           >
             <span className="font-medium text-lg relative">
             For Jobseekers
@@ -64,7 +62,7 @@ const Header: React.FC = () => {
           </li>
           <li
             className="group cursor-pointer"
-            onClick={() => handleNavigation("#about")}
+            onClick={() => handleNavigation("/for-companies")}
           >
             <span className="font-medium text-lg relative">
             For Companies
@@ -73,7 +71,7 @@ const Header: React.FC = () => {
           </li>
           <li
             className="group cursor-pointer"
-            onClick={() => handleNavigation("#careers")}
+            onClick={() => handleNavigation("/contact-us")}
           >
             <span className="font-medium text-lg relative">
             Contact Us
@@ -247,25 +245,25 @@ const Header: React.FC = () => {
               <ul className="flex flex-col gap-4 mt-12">
                 <li
                   className="cursor-pointer"
-                  onClick={() => handleNavigation("#services")}
+                  onClick={() => handleNavigation("/")}
                 >
                   <span className="text-2xl font-semibold">About</span>
                 </li>
                 <li
                   className="cursor-pointer"
-                  onClick={() => handleNavigation("#whyChooseUs")}
+                  onClick={() => handleNavigation("/for-jobseekers")}
                 >
                   <span className="text-2xl font-semibold">For Jobseekers</span>
                 </li>
                 <li
                   className="cursor-pointer"
-                  onClick={() => handleNavigation("#about")}
+                  onClick={() => handleNavigation("/for-companies")}
                 >
                   <span className="text-2xl font-semibold">For Companies</span>
                 </li>
                 <li
                   className="cursor-pointer"
-                  onClick={() => handleNavigation("#careers")}
+                  onClick={() => handleNavigation("/contact-us")}
                 >
                   <span className="text-2xl font-semibold">Contact Us</span>
                 </li>
