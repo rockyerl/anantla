@@ -1,9 +1,11 @@
+import assetConstants from "@/utils/assetConstants";
 import {
   motion,
   AnimatePresence,
   useScroll,
   useTransform,
 } from "framer-motion";
+import Image from "next/image";
 import { useRouter } from "next/router";
 import { useState } from "react";
 
@@ -28,19 +30,31 @@ const Header: React.FC = () => {
 
   return (
     <motion.div
-      className="navbar text-white justify-start gap-6 px-4 sm:px-14 py-5 sticky top-0 z-50 transition-all duration-300 ease-in-out transform"
+      className="navbar text-white lg:justify-start justify-between gap-6 px-4 sm:px-12 py-5 sticky top-0 z-50 transition-all duration-300 ease-in-out transform"
       style={{ backgroundColor }}
     >
       <div
-        className="flex justify-center items-center group cursor-pointer"
+        className="flex justify-center items-center group cursor-pointer relative lg:mr-32 mr-0"
         onClick={() => handleNavigation("/")}
       >
-        <span className="text-3xl">A</span>
-        <span className="text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          NANTLA
-        </span>
+        <Image
+          src={assetConstants.miniLogo}
+          alt="logo"
+          width={25}
+          height={25}
+          className="w-[25px]"
+        />
+        <div className="absolute left-0 w-[160px]">
+          <Image
+            src={assetConstants.logo}
+            alt="logo"
+            width={160}
+            height={160}
+            className=" w-[160px] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          />
+        </div>
       </div>
-      <div className="hidden md:flex w-3/5 justify-evenly">
+      <div className="hidden md:flex lg:w-3/5 w-full justify-evenly">
         <ul className="flex w-full justify-start gap-24">
           <li
             className="group cursor-pointer"
@@ -56,7 +70,7 @@ const Header: React.FC = () => {
             onClick={() => handleNavigation("/for-jobseekers")}
           >
             <span className="font-medium text-lg relative">
-            For Jobseekers
+              For Jobseekers
               <span className="absolute bottom-0 left-0 w-full h-0.5 bg-current transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
             </span>
           </li>
@@ -65,7 +79,7 @@ const Header: React.FC = () => {
             onClick={() => handleNavigation("/for-companies")}
           >
             <span className="font-medium text-lg relative">
-            For Companies
+              For Companies
               <span className="absolute bottom-0 left-0 w-full h-0.5 bg-current transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
             </span>
           </li>
@@ -74,7 +88,7 @@ const Header: React.FC = () => {
             onClick={() => handleNavigation("/contact-us")}
           >
             <span className="font-medium text-lg relative">
-            Contact Us
+              Contact Us
               <span className="absolute bottom-0 left-0 w-full h-0.5 bg-current transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
             </span>
           </li>

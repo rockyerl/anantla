@@ -15,7 +15,7 @@ const Footer: React.FC = () => {
           ></path>
         </svg>
       </div>
-      <div className="w-full flex justify-center relative">
+      <div className="w-full flex justify-center relative lg:scale-100 scale-75">
         <Image
           src={assetConstants.footerLogo}
           alt="logo"
@@ -99,7 +99,7 @@ const Footer: React.FC = () => {
         </div>
       </div>
       <div className="border-b-2 mb-4" />
-      <div className="flex justify-between items-center my-4 flex-wrap gap-y-4 w-4/5 m-auto">
+      <div className="flex justify-between items-center my-4 flex-wrap gap-y-4 lg:w-4/5 w-full m-auto">
         <div className="text-sm ">
           © {new Date().getFullYear()} Your Company Name. All rights reserved.
         </div>

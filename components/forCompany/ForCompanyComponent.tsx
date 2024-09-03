@@ -6,12 +6,12 @@ import { motion } from "framer-motion";
 const ForCompanyComponent = () => {
   return (
     <div className="min-h-screen">
-      <section className="h-[110vh] gradient-primary relative">
+      <section className="h-[110vh] gradient-primary relative flex justify-center  items-center lg:flex-nowrap flex-wrap">
         <div>
           <div className="absolute inset-0 opacity-20 left-0 top-0">
             <div className="h-full">
               <Image
-                src={assetConstants.banner}
+                src={assetConstants.banner2}
                 alt="hero"
                 className="w-full h-full object-cover"
                 fill
@@ -29,29 +29,39 @@ const ForCompanyComponent = () => {
           </div>
           <div className="absolute bottom-0 left-0 right-0 bg-white h-1"></div>
         </div>
-        <div className="h-full w-1/3 flex flex-col justify-center items-start gap-6 mx-56">
-          <span className="text-white text-7xl font-bold">Hire smarter,</span>
-          <span className="text-white text-7xl ">not harder.</span>
+        <div className="h-full lg:w-1/3 w-full flex flex-col justify-center items-start gap-6 lg:mx-32 mx-4 lg:pr-0 pr-6">
+          <span className="text-white lg:text-7xl text-4xl font-bold">
+            Hire smarter,
+          </span>
+          <span className="text-white lg:text-7xl text-4xl ">not harder.</span>
           <div>
-            <span className="text-white text-lg">
+            <span className="text-white lg:text-lg text-base">
               The most important task of a leader is recruiting the right team,
               but most recruiters will tell you to increase your budget or lower
               your standards. We invented a better way.
             </span>
           </div>
           <div className="flex justify-center items-center">
-            <span className="text-white text-xl font-bold mr-4">
+            <span className="text-white lg:text-xl text-lg font-bold mr-4">
               GET STARTED
             </span>
             <FaArrowRight color="white" size={20} />
           </div>
         </div>
+        <div className="w-[35%] relative -mb-28 lg:block hidden">
+          <Image
+            src={assetConstants.bannerCompany}
+            alt="contactUs"
+            width={1000}
+            height={1000}
+          />
+        </div>
       </section>
       <section className="w-4/5 flex m-auto my-16 justify-center items-center flex-col gap-8">
-        <span className="lg:text-4xl text-3xl text-primary">
+        <span className="lg:text-4xl text-2xl text-primary">
           Companies we Work with
         </span>
-        <div className="flex gap-16">
+        <div className="flex gap-16 overflow-x-auto">
           <Image
             src={assetConstants.webFlow}
             alt="review"
@@ -82,14 +92,14 @@ const ForCompanyComponent = () => {
           />
         </div>
       </section>
-      <section className="w-4/5 m-auto">
+      <section className="lg:w-4/5 w-full m-auto">
         <div className="w-full lg:px-14 px-4 lg:py-16 py-4 flex flex-col justify-between items-center relative m-auto top-0 mt-16 text-black">
-          <span className="w-full mt-10 text-4xl text-left ">
+          <span className="w-full mt-10 lg:text-4xl text-xl text-left ">
             Meet some of the 5,000+ rockstars who have found a rewarding remote
             career on Crossover.
           </span>
         </div>
-        <div className="w-full py-4 flex flex-wrap">
+        <div className="w-full py-4 gap-4 flex flex-wrap justify-center">
           {[
             {
               title: "John Doe",
@@ -118,16 +128,16 @@ const ForCompanyComponent = () => {
           ].map((feature, index) => (
             <div
               key={index}
-              className="lg:w-[47%] md:w-[40%] w-full rounded-xl mx-4 mb-4"
+              className="carousel-item lg:w-[40%] md:w-[48%] w-full rounded-xl lg:mx-4 mx-0"
             >
-              <div className="rounded-xl border bg-white border-white py-4 px-4 h-full flex gap-6 items-end justify-between shadow-md">
+              <div className="rounded-xl border bg-white border-white py-4 px-4 h-full flex lg:flex-row flex-col gap-6 items-end justify-between shadow-md">
                 <div className="rounded-lg mb-4">
                   <Image
                     src={feature.image}
                     alt={feature.title}
                     width={400}
                     height={180}
-                    className="h-[180px]"
+                    className="lg:h-[180px] h-[unset] object-contain"
                   />
                 </div>
                 <div className="flex flex-col justify-start items-start h-full">
@@ -175,11 +185,11 @@ const ForCompanyComponent = () => {
         </div>
       </section>
 
-      <section className="w-3/4 flex bg-black lg:px-14 px-4 lg:py-16 py-4 flex-wrap justify-between relative gradient-secondary-reverse m-auto rounded-3xl top-0 mt-16">
+      <section className="lg:w-3/4 w-[95%] flex bg-black lg:px-14 px-4 lg:py-16 py-4 flex-wrap justify-between relative gradient-secondary-reverse m-auto rounded-3xl top-0 mt-16">
         <div className="lg:w-[48%] w-full text-white flex flex-col justify-center ">
-          <div className="text-xl  font-semibold mb-1">CAREER</div>
+          <div className="lg:text-xl text-lg font-semibold mb-1">CAREER</div>
           <div className="mt-2">
-            <h2 className="lg:text-4xl text-3xl font-bold mb-4">
+            <h2 className="lg:text-4xl text-2xl font-bold mb-4">
               Expect a dynamic work environment and
               <span className="text-[#87FBBD] mx-2">
                 unlimited growth potential.
@@ -207,7 +217,7 @@ const ForCompanyComponent = () => {
           </div>
         </div>
         <motion.div
-          className="lg:w-1/2 w-full relative lg:h-[unset] md:h-96 h-72"
+          className="lg:w-1/2 w-full relative lg:h-[unset] md:h-96 h-72 mt-4"
           initial={{ x: 200, opacity: 0 }}
           whileInView={{ x: 0, y: 0, opacity: 1 }}
           transition={{ duration: 0.5 }}

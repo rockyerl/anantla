@@ -7,12 +7,12 @@ import { BsArrowRightShort } from "react-icons/bs";
 const ForJobSeekersComponent = () => {
   return (
     <div className="min-h-screen">
-      <section className="h-[110vh] gradient-primary relative flex justify-center gap-12 items-center">
+      <section className="h-[110vh] gradient-primary relative flex justify-center  items-center lg:flex-nowrap flex-wrap">
         <div>
           <div className="absolute inset-0 opacity-20 left-0 top-0">
             <div className="h-full">
               <Image
-                src={assetConstants.banner}
+                src={assetConstants.banner3}
                 alt="hero"
                 className="w-full h-full object-cover"
                 fill
@@ -30,23 +30,23 @@ const ForJobSeekersComponent = () => {
           </div>
           <div className="absolute bottom-0 left-0 right-0 bg-white h-1"></div>
         </div>
-        <div className="h-full w-1/3 flex flex-col justify-center items-start gap-6 ">
-          <span className="text-white text-7xl font-bold">Explore Roles</span>
-          <span className="text-white text-7xl ">on Anantla</span>
+        <div className="h-full lg:w-1/3 w-full flex flex-col justify-center items-start gap-6 lg:mx-32 mx-0 lg:pr-0 pr-6">
+          <span className="text-white lg:text-7xl text-4xl font-bold">Explore Roles</span>
+          <span className="text-white lg:text-7xl text-4xl ">on Anantla</span>
           <div>
-            <span className="text-white text-lg">
+            <span className="text-white lg:text-lg text-base">
               Enjoy the stability of a traditional job with the flexibility to
               live and work from anywhere. 
             </span>
           </div>
           <div className="flex justify-center items-center">
-            <span className="text-white text-xl font-bold mr-4">
+            <span className="text-white lg:text-xl text-lg font-bold mr-4">
               GET STARTED
             </span>
             <FaArrowRight color="white" size={20} />
           </div>
         </div>
-        <div className="w-[40%] relative -mb-28">
+        <div className="w-[35%] relative -mb-28 lg:block hidden">
           <Image
             src={assetConstants.forEmployeeBanner}
             alt="contactUs"
@@ -57,25 +57,25 @@ const ForJobSeekersComponent = () => {
       </section>
       <section className="w-11/12 m-auto">
         <div className="w-full lg:px-14 px-4 lg:py-16 py-4 flex flex-col justify-between items-center relative m-auto top-0 16 text-black">
-          <div>
-            <span className="lg:text-5xl text-3xl font-bold text-nowrap text-black ">
+          <div className="text-center">
+            <span className="lg:text-5xl text-2xl font-bold lg:text-nowrap text-wrap text-black ">
               Find roles that your skill set.
             </span>
-            <span className="lg:text-5xl text-3xl font-bold text-nowrap text-primary mx-2">
+            <span className="lg:text-5xl text-2xl font-bold lg:text-nowrap text-wrap text-primary mx-2">
               match
             </span>
-            <span className="lg:text-5xl text-3xl font-bold text-nowrap text-black">
+            <span className="lg:text-5xl text-2xl font-bold lg:text-nowrap text-wrap text-black">
               your skill set.
             </span>
           </div>
-          <span className="w-full mt-10 text-2xl text-center ">
+          <span className="w-full mt-10 lg:text-2xl text-lg text-center ">
             Explore the list of available job roles and choose the jobs that
             match your career ambitions and skills. With over 70+ active job
             openings Crossover matches top-tier companies with the best 1% of
             remote workers around the globe.
           </span>
         </div>
-        <div className="w-full flex mt-8 gap-12 flex-wrap">
+        <div className="w-full flex mt-8 gap-12 flex-wrap justify-center">
           {[
             { title: "IT JOB TRAINING", image: assetConstants.services },
             { title: "DESIGN", image: assetConstants.services },

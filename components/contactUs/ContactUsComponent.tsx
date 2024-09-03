@@ -18,7 +18,7 @@ const ContactUsComponent = () => {
           <div className="absolute inset-0 opacity-20 left-0 top-0">
             <div className="h-full">
               <Image
-                src={assetConstants.banner}
+                src={assetConstants.bannerChoose}
                 alt="hero"
                 className="w-full h-full object-cover"
                 fill
@@ -36,13 +36,13 @@ const ContactUsComponent = () => {
           </div>
           <div className="absolute bottom-0 left-0 right-0 bg-white h-1"></div>
         </div>
-        <div className="h-full w-2/3 m-auto flex flex-col justify-center items-start gap-6 mx-56 pb-36">
+        <div className="h-full  lg:w-2/3 w-full m-auto flex flex-col justify-center items-start gap-6 lg:mx-32 mx-4 lg:pr-0 pr-6 lg:pb-36 pb-0">
           <div>
-            <span className="text-white text-7xl font-bold">Get in Touch </span>
-            <span className="text-white text-7xl ">with Us!</span>
+            <span className="text-white lg:text-7xl text-4xl font-bold">Get in Touch </span>
+            <span className="text-white lg:text-7xl text-4xl ">with Us!</span>
           </div>
           <div>
-            <span className="text-white text-lg">
+            <span className="text-white lg:text-lg text-base">
               The most important task of a leader is recruiting the right team,
               but most recruiters will tell you to increase your budget or lower
               your standards. We invented a better way.
@@ -50,7 +50,7 @@ const ContactUsComponent = () => {
           </div>
         </div>
       </section>
-      <section className="w-3/4 flex bg-white shadow-lg lg:px-14 px-4 lg:py-16 py-4 flex-wrap justify-between relative m-auto rounded-3xl top-0 -mt-64">
+      <section className="lg:w-3/4 w-[95%] flex bg-white shadow-lg lg:px-14 px-4 lg:py-16 py-4 flex-wrap justify-between relative m-auto rounded-3xl top-0 lg:-mt-64 mt-0">
         <motion.div
           className="lg:w-1/2 w-full relative lg:h-[unset] md:h-96 h-72"
           initial={{ x: 200, opacity: 0 }}
@@ -65,7 +65,7 @@ const ContactUsComponent = () => {
             className="absolute inset-0 w-full h-full rounded-2xl"
           />
         </motion.div>
-        <div className="lg:w-[48%] w-full  flex flex-col justify-center ">
+        <div className="lg:w-[48%] w-full flex flex-col justify-center ">
           <div className="mt-2">
             <h2 className="lg:text-4xl text-3xl font-bold mb-4">
               Contact Us <span className="text-primary">Anytime!</span>
@@ -110,51 +110,51 @@ const ContactUsComponent = () => {
           </div>
         </div>
       </section>
-      <section className="w-3/4 m-auto">
+      <section className="lg:w-3/4 w-full m-auto mt-12">
         <div className="w-full lg:px-14 px-4 lg:py-16 py-4 flex flex-col justify-between items-center relative m-auto top-0 16 text-black">
           <div>
-            <span className="lg:text-4xl text-3xl font-bold text-nowrap text-black ">
+            <span className="lg:text-4xl text-2xl font-bold text-nowrap text-black ">
               Stay Connected
             </span>
           </div>
-          <span className="w-full mt-10 text-xl text-center ">
+          <span className="w-full mt-10 lg:text-xl text-lg text-center ">
             Stay connected and join our vibrant community! Follow us on social
             media to keep up with the latest updates, news, and exclusive
             content.
           </span>
           <ul className="flex gap-8 flex-wrap mt-12">
-            <li className="flex gap-2 items-center w-[30%]">
+            <li className="flex gap-2 items-center lg:w-[30%] w-[45%]">
               <FaFacebook size={28} />
               <span className="text-xl">Facebook</span>
             </li>
-            <li className="flex gap-2 items-center w-[30%]">
+            <li className="flex gap-2 items-center lg:w-[30%] w-[45%]">
               <FaInstagram size={28} />
               <span className="text-xl">Instagram</span>
             </li>
-            <li className="flex gap-2 items-center w-[30%]">
+            <li className="flex gap-2 items-center lg:w-[30%] w-[45%]">
               <FaXTwitter size={28} />
               <span className="text-xl">X</span>
             </li>
-            <li className="flex gap-2 items-center w-[30%]">
+            <li className="flex gap-2 items-center lg:w-[30%] w-[45%]">
               <FaLinkedin size={28} />
               <span className="text-xl">LinkedIn</span>
             </li>
-            <li className="flex gap-2 items-center w-[30%]">
+            <li className="flex gap-2 items-center lg:w-[30%] w-[45%]">
               <FaYoutube size={28} />
               <span className="text-xl">Youtube</span>
             </li>
-            <li className="flex gap-2 items-center w-[30%]">
+            <li className="flex gap-2 items-center lg:w-[30%] w-[45%]">
               <FaLinkedin size={28} />
               <span className="text-xl">Linkedin</span>
             </li>
           </ul>
         </div>
       </section>
-      <section className="w-3/4 flex bg-black lg:px-14 px-4 lg:py-16 py-4 flex-wrap justify-between relative gradient-secondary-reverse m-auto rounded-3xl top-0 mt-16">
+      <section className="lg:w-3/4 w-[90%] flex bg-black lg:px-14 px-4 lg:py-16 py-4 flex-wrap justify-between relative gradient-secondary-reverse m-auto rounded-3xl top-0 mt-16">
         <div className="lg:w-[48%] w-full text-white flex flex-col justify-center ">
-          <div className="text-xl  font-semibold mb-1">NEWSLETTER</div>
+          <div className="lg:text-xl text-lg  font-semibold mb-1">NEWSLETTER</div>
           <div className="mt-2">
-            <h2 className="lg:text-4xl text-3xl font-bold mb-4">
+            <h2 className="lg:text-4xl text-2xl font-bold mb-4">
               Join our newsletter to stay up to date on features and releases.
             </h2>
             <div className="flex mt-4 gap-4">
@@ -178,7 +178,7 @@ const ContactUsComponent = () => {
           </div>
         </div>
         <motion.div
-          className="lg:w-1/2 w-full relative lg:h-[unset] md:h-96 h-72"
+          className="lg:w-1/2 w-full relative lg:h-[unset] md:h-96 h-72 mt-4"
           initial={{ x: 200, opacity: 0 }}
           whileInView={{ x: 0, y: 0, opacity: 1 }}
           transition={{ duration: 0.5 }}

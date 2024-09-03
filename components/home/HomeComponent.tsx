@@ -10,8 +10,8 @@ const HomeComponent = () => {
   const carouselRef = useRef<HTMLDivElement | null>(null);
 
   return (
-    <div className="min-h-screen">
-      <section className="h-[110vh] gradient-primary relative">
+    <div className="min-h-screen w-full">
+      <section className="lg:h-[110vh] h-[100vh] gradient-primary relative">
         <div>
           <div className="absolute inset-0 opacity-20 left-0 top-0">
             <div className="h-full">
@@ -34,14 +34,18 @@ const HomeComponent = () => {
           </div>
           <div className="absolute bottom-0 left-0 right-0 bg-white h-1"></div>
         </div>
-        <div className="h-full w-1/3 flex flex-col justify-center items-start gap-6 mx-56">
-          <span className="text-white text-7xl font-bold">Elevate</span>
-          <span className="text-white text-7xl ">your Business</span>
+        <div className="h-full lg:w-1/3 w-full flex flex-col justify-center items-start gap-6 lg:mx-56 mx-4 lg:pr-0 pr-6">
+          <span className="text-white lg:text-7xl text-4xl font-bold">
+            Elevate
+          </span>
+          <span className="text-white lg:text-7xl text-4xl ">
+            your Business
+          </span>
           <div>
-            <span className="text-white text-lg font-bold mr-2">
+            <span className="text-white lg:text-lg text-base font-bold mr-2">
               In today’s fast-paced world, why settle for less?
             </span>
-            <span className="text-white text-lg">
+            <span className="text-white lg:text-lg text-base">
               We deliver top-tier software development and manpower solutions
               tailored to your needs-without breaking the bank. Whether you’re
               building a cutting-edge website or app, or need the perfect
@@ -49,10 +53,14 @@ const HomeComponent = () => {
             </span>
           </div>
           <div className="flex justify-center items-center">
-            <span className="text-white text-xl font-bold mr-4">
+            <span className="text-white lg:text-xl text-base font-bold mr-4">
               READY TO BE IMPRESSED ?
             </span>
-            <FaArrowRight color="white" size={20} />
+            <FaArrowRight
+              color="white"
+              size={20}
+              className="lg:w-[20px] w-[10px]"
+            />
           </div>
         </div>
       </section>
@@ -71,7 +79,7 @@ const HomeComponent = () => {
             software solutions, and consulting to unlock your full potential.
           </span>
         </div>
-        <div className="w-full flex mt-8 gap-12">
+        <div className="w-full flex mt-8 gap-12 flex-wrap justify-center">
           {[
             { title: "IT JOB TRAINING", image: assetConstants.services },
             { title: "DESIGN", image: assetConstants.services },
@@ -80,7 +88,7 @@ const HomeComponent = () => {
           ].map((feature, index) => (
             <div
               key={index}
-              className="lg:w-[25%] md:w-[48%] w-full rounded-xl"
+              className="lg:w-[22%] md:w-[45%] w-full rounded-xl"
             >
               <div className="rounded-xl border border-white py-4 px-4 h-full flex items-end flex-col justify-between shadow-md">
                 <div className="rounded-lg mb-4">
@@ -118,7 +126,7 @@ const HomeComponent = () => {
           ))}
         </div>
       </section>
-      <section className="lg:px-14 px-4 py-4 my-16 relative h-[200vh]">
+      <section className="lg:px-14 px-4 py-4 my-16 relative lg:h-[200vh] h-[unset]">
         <div>
           <div className="absolute inset-0 opacity-40 left-0 top-0">
             <div className="h-full">
@@ -153,7 +161,7 @@ const HomeComponent = () => {
           </div>
           <div className="absolute bottom-0 left-0 right-0 bg-white h-1"></div>
         </div>
-        <div className="w-4/5 gradient-primary-reverse px-14 py-12 flex gap-12 lg:flex-nowrap flex-wrap relative m-auto rounded-3xl top-0">
+        <div className="lg:w-4/5 w-full gradient-primary-reverse lg:px-14 px-4 py-12 flex gap-12 lg:flex-nowrap flex-wrap relative m-auto rounded-3xl top-0">
           <div className="absolute inset-0 opacity-20 left-0 top-0">
             <div className="h-full">
               <Image
@@ -174,7 +182,7 @@ const HomeComponent = () => {
             </span>
           </div>
           <div className="flex flex-col lg:w-2/3 w-full gap-8 lg:text-left justify-center text-center">
-            <div className="flex w-full justify-around">
+            <div className="flex w-full lg:justify-around justify-between">
               <div className="flex flex-col">
                 <p className="text-white">Happy Client</p>
                 <motion.p
@@ -212,7 +220,7 @@ const HomeComponent = () => {
             </div>
           </div>
         </div>
-        <div className="w-4/5 flex bg-black lg:px-14 px-4 lg:py-16 py-4 flex-wrap justify-between relative gradient-secondary m-auto rounded-3xl top-0 mt-32">
+        <div className="lg:w-4/5 w-full flex bg-black lg:px-14 px-4 lg:py-16 py-4 flex-wrap justify-between relative gradient-secondary m-auto rounded-3xl top-0 mt-32">
           <motion.div
             className="lg:w-1/2 w-full relative lg:h-[unset] md:h-96 h-72"
             initial={{ x: -200, opacity: 0 }}
@@ -227,7 +235,7 @@ const HomeComponent = () => {
               className="absolute inset-0 w-full h-full rounded-2xl"
             />
           </motion.div>
-          <div className="lg:w-[48%] w-full text-white flex flex-col justify-center ">
+          <div className="lg:w-[48%] w-full text-white flex flex-col justify-center mt-2">
             <div className="text-xl  font-semibold mb-1">ABOUT US</div>
             <div className="mt-2">
               <h2 className="lg:text-4xl text-3xl font-bold mb-4">
@@ -258,22 +266,22 @@ const HomeComponent = () => {
             </div>
           </div>
         </div>
-        <div className="w-4/5 lg:px-14 px-4 lg:py-16 py-4 flex flex-col justify-between items-center relative m-auto top-0 mt-16">
+        <div className="lg:w-4/5 w-full lg:px-14 px-4 lg:py-16 py-4 flex flex-col justify-between items-center relative m-auto top-0 mt-16">
           <div className="w-full flex justify-between text-white">
-            <span className="lg:text-3xl text-3xl  text-nowrap">NEWS</span>
+            <span className="lg:text-3xl text-xl  text-nowrap">NEWS</span>
             <span className="text-nowrap flex justify-center items-center gap-4">
               See All News
-              <FaArrowRight color="white" size={12} />
+              <FaArrowRight size={12} color="white" />
             </span>
           </div>
-          <span className="w-full mt-10 text-4xl text-left text-white">
+          <span className="w-full mt-10 lg:text-4xl text-xl  lg:text-left text-center text-white">
             At Anantla Tech Ventures, we empower you with IT training, tailored
             software solutions, and consulting to unlock your full potential.
           </span>
         </div>
       </section>
-      <section className="-mt-48 relative">
-        <div className="carousel w-full py-4" ref={carouselRef}>
+      <section className="lg:-mt-48 mt-0 relative">
+        <div className="carousel w-full py-4 px-8" ref={carouselRef}>
           {[
             {
               title: "AI-Powered Cars Set to Revolutionize the Industry",
@@ -304,7 +312,7 @@ const HomeComponent = () => {
               key={index}
               className="carousel-item lg:w-[21%] md:w-[48%] w-full rounded-xl mx-4"
             >
-              <div className="rounded-xl border bg-white border-white py-4 px-4 h-full flex items-end flex-col justify-between shadow-md">
+              <div className="rounded-xl border bg-white border-white py-4 px-4 h-full flex items-end flex-col justify-between shadow-lg">
                 <div className="rounded-lg mb-4">
                   <Image
                     src={feature.image}
@@ -348,7 +356,7 @@ const HomeComponent = () => {
           ))}
         </div>
       </section>
-      <section className="w-3/4 flex bg-black lg:px-14 px-4 lg:py-16 py-4 flex-wrap justify-between relative gradient-secondary-reverse m-auto rounded-3xl top-0 mt-16">
+      <section className="lg:w-3/4 w-[95%] flex bg-black lg:px-14 px-4 lg:py-16 py-4 flex-wrap justify-between relative gradient-secondary-reverse m-auto rounded-3xl top-0 mt-16">
         <div className="lg:w-[48%] w-full text-white flex flex-col justify-center ">
           <div className="text-xl  font-semibold mb-1">CAREER</div>
           <div className="mt-2">
@@ -380,7 +388,7 @@ const HomeComponent = () => {
           </div>
         </div>
         <motion.div
-          className="lg:w-1/2 w-full relative lg:h-[unset] md:h-96 h-72"
+          className="lg:w-1/2 w-full relative lg:h-[unset] md:h-96 h-72 mt-4"
           initial={{ x: 200, opacity: 0 }}
           whileInView={{ x: 0, y: 0, opacity: 1 }}
           transition={{ duration: 0.5 }}
@@ -395,20 +403,20 @@ const HomeComponent = () => {
         </motion.div>
       </section>
       <section className="w-full">
-        <div className="w-4/5 lg:px-14 px-4 lg:py-16 py-4 flex flex-col justify-between items-center relative m-auto top-0 mt-16 text-black">
-          <div className="w-full flex justify-between ">
-            <span className="lg:text-3xl text-3xl  text-nowrap">REVIEW</span>
+        <div className="lg:w-4/5 w-full lg:px-14 px-4 lg:py-16 py-4 flex flex-col justify-between items-center relative m-auto top-0 mt-16 text-black">
+          <div className="w-full flex justify-between">
+            <span className="lg:text-3xl text-xl  text-nowrap">REVIEW</span>
             <span className="text-nowrap flex justify-center items-center gap-4">
               See All Reviews
               <FaArrowRight color="white" size={12} />
             </span>
           </div>
-          <span className="w-full mt-10 text-4xl text-left ">
+          <span className="w-full mt-10 lg:text-4xl text-xl text-left ">
             Meet some of the 5,000+ rockstars who have found a rewarding remote
             career on Crossover.
           </span>
         </div>
-        <div className="carousel w-full py-4" ref={carouselRef}>
+        <div className="carousel w-full py-4 lg:px-0 px-8" ref={carouselRef}>
           {[
             {
               title: "John Doe",
@@ -439,14 +447,14 @@ const HomeComponent = () => {
               key={index}
               className="carousel-item lg:w-[40%] md:w-[48%] w-full rounded-xl mx-4"
             >
-              <div className="rounded-xl border bg-white border-white py-4 px-4 h-full flex gap-6 items-end justify-between shadow-md">
+              <div className="rounded-xl border bg-white border-white py-4 px-4 h-full flex lg:flex-row flex-col gap-6 items-end justify-between shadow-md">
                 <div className="rounded-lg mb-4">
                   <Image
                     src={feature.image}
                     alt={feature.title}
                     width={400}
                     height={180}
-                    className="h-[180px]"
+                    className="lg:h-[180px] h-[unset] object-contain"
                   />
                 </div>
                 <div className="flex flex-col justify-start items-start h-full">
@@ -493,7 +501,7 @@ const HomeComponent = () => {
           ))}
         </div>
       </section>
-      <section className="relative bg-primary w-4/5 lg:px-10 px-4 lg:py-8 py-4 flex m-auto rounded-2xl my-16 justify-between">
+      <section className="relative bg-primary lg:w-4/5 w-11/12 lg:px-10 px-4 lg:py-8 py-4 flex m-auto rounded-2xl my-16 justify-between items-center">
         <div className="absolute inset-0 opacity-20 left-0 top-0">
           <div className="h-full">
             <Image
@@ -504,20 +512,13 @@ const HomeComponent = () => {
             />
           </div>
         </div>
-        <span className="text-white lg:text-4xl text-3xl font-bold">
+        <span className="text-white lg:text-4xl text-xl font-bold">
           Be Part of Our Team!
         </span>
-        <motion.button
-          className="relative z-10  bg-black justify-center text-white px-8 py-3 rounded-md flex items-center gap-2 hover:bg-primary-dark transition-colors duration-300"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          initial={{ x: 200, opacity: 0 }}
-          whileInView={{ x: 0, y: 0, opacity: 1 }}
-          transition={{ duration: 0.5 }}
-        >
-          Join Us
+        <button className="relative z-10 lg:scale-100 scale-75 bg-black justify-center text-white lg:px-8 px-4 py-2 rounded-md flex items-center gap-2 hover:bg-primary-dark transition-colors duration-300">
+          <span className="text-nowrap">Join Us</span>
           <FaArrowRight color="white" size={12} />
-        </motion.button>
+        </button>
       </section>
     </div>
   );
