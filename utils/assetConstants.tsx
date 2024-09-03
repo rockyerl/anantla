@@ -12,6 +12,7 @@ const assetConstants = {
   services: "/assets/png/services.png",
   webFlow: "/assets/png/webflow-black.png",
   relume: "/assets/png/relume-black.png",
+  forEmployeeBanner: "/assets/png/for-employee.png",
 };
 
 

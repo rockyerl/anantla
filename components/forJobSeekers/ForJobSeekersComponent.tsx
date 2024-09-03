@@ -7,7 +7,7 @@ import { BsArrowRightShort } from "react-icons/bs";
 const ForJobSeekersComponent = () => {
   return (
     <div className="min-h-screen">
-      <section className="h-[110vh] gradient-primary relative">
+      <section className="h-[110vh] gradient-primary relative flex justify-center gap-12 items-center">
         <div>
           <div className="absolute inset-0 opacity-20 left-0 top-0">
             <div className="h-full">
@@ -30,7 +30,7 @@ const ForJobSeekersComponent = () => {
           </div>
           <div className="absolute bottom-0 left-0 right-0 bg-white h-1"></div>
         </div>
-        <div className="h-full w-1/3 flex flex-col justify-center items-start gap-6 mx-56">
+        <div className="h-full w-1/3 flex flex-col justify-center items-start gap-6 ">
           <span className="text-white text-7xl font-bold">Explore Roles</span>
           <span className="text-white text-7xl ">on Anantla</span>
           <div>
@@ -45,6 +45,14 @@ const ForJobSeekersComponent = () => {
             </span>
             <FaArrowRight color="white" size={20} />
           </div>
+        </div>
+        <div className="w-[40%] relative -mb-28">
+          <Image
+            src={assetConstants.forEmployeeBanner}
+            alt="contactUs"
+            width={1000}
+            height={1000}
+          />
         </div>
       </section>
       <section className="w-11/12 m-auto">
