@@ -36,21 +36,22 @@ const ContactUsComponent = () => {
           </div>
           <div className="absolute bottom-0 left-0 right-0 bg-white h-1"></div>
         </div>
-        <div className="h-full  lg:w-2/3 w-full m-auto flex flex-col justify-center items-start gap-6 lg:mx-32 mx-4 lg:pr-0 pr-6 lg:pb-36 pb-0">
+        <div className="h-full lg:w-3/4 w-full m-auto flex flex-col justify-center items-start gap-6 lg:pr-0 pr-6 lg:pb-36 pb-0">
           <div>
-            <span className="text-white lg:text-7xl text-4xl font-bold">Get in Touch </span>
+            <span className="text-white lg:text-7xl text-4xl font-bold">
+              Get in Touch{" "}
+            </span>
             <span className="text-white lg:text-7xl text-4xl ">with Us!</span>
           </div>
           <div>
-            <span className="text-white lg:text-lg text-base">
-              The most important task of a leader is recruiting the right team,
-              but most recruiters will tell you to increase your budget or lower
-              your standards. We invented a better way.
+            <span className="text-white lg:text-xl text-lg">
+              We`d love to hear from you! Whether you have a question, feedback,
+              or need assistance, our team is here to help.
             </span>
           </div>
         </div>
       </section>
-      <section className="lg:w-3/4 w-[95%] flex bg-white shadow-lg lg:px-14 px-4 lg:py-16 py-4 flex-wrap justify-between relative m-auto rounded-3xl top-0 lg:-mt-64 mt-0">
+      <section className="lg:w-3/4 w-[95%] flex bg-white shadow-lg lg:px-14 px-4 lg:py-16 py-4 flex-wrap justify-between relative m-auto rounded-3xl top-0 lg:-mt-[22rem] mt-0">
         <motion.div
           className="lg:w-1/2 w-full relative lg:h-[unset] md:h-96 h-72"
           initial={{ x: 200, opacity: 0 }}
@@ -74,7 +75,7 @@ const ContactUsComponent = () => {
               We’re dedicated to providing you with the best support possible.
             </span>
             <div className="flex flex-col mt-4 gap-6 w-full">
-              <div className="flex flex-col w-full">
+              <div className="flex flex-col w-full gap-2">
                 <h3>Name</h3>
                 <input
                   type="text"
@@ -82,7 +83,7 @@ const ContactUsComponent = () => {
                   className="lg:px-4 px-2 lg:py-3 py-2 text-neutral rounded-lg focus:outline-none border"
                 />
               </div>
-              <div className="flex flex-col w-full">
+              <div className="flex flex-col w-full gap-2">
                 <h3>Email</h3>
                 <input
                   type="email"
@@ -90,7 +91,7 @@ const ContactUsComponent = () => {
                   className="lg:px-4 px-2 lg:py-3 py-2 text-neutral rounded-lg focus:outline-none border"
                 />
               </div>
-              <div className="flex flex-col w-full">
+              <div className="flex flex-col w-full gap-2">
                 <h3>Message</h3>
                 <textarea
                   placeholder="Enter your message"
@@ -98,13 +99,13 @@ const ContactUsComponent = () => {
                 ></textarea>
               </div>
               <div>
-                <button
-                  type="submit"
-                  title="submit"
-                  className="bg-primary text-white lg:px-16 px-2 lg:py-3 py-2 rounded-lg hover:bg-gray-900 transition-colors border border-white"
+                <a
+                  href="mailto:contact@example.com"
+                  title="Contact Us"
+                  className="inline-block bg-primary text-white lg:px-16 px-2 lg:py-3 py-2 rounded-lg hover:bg-gray-900 transition-colors border border-white text-center"
                 >
-                  Submit
-                </button>
+                  Contact Us
+                </a>
               </div>
             </div>
           </div>
@@ -152,12 +153,14 @@ const ContactUsComponent = () => {
       </section>
       <section className="lg:w-3/4 w-[90%] flex bg-black lg:px-14 px-4 lg:py-16 py-4 flex-wrap justify-between relative gradient-secondary-reverse m-auto rounded-3xl top-0 mt-16">
         <div className="lg:w-[48%] w-full text-white flex flex-col justify-center ">
-          <div className="lg:text-xl text-lg  font-semibold mb-1">NEWSLETTER</div>
+          <div className="lg:text-xl text-lg  font-semibold mb-1">
+            NEWSLETTER
+          </div>
           <div className="mt-2">
             <h2 className="lg:text-4xl text-2xl font-bold mb-4">
               Join our newsletter to stay up to date on features and releases.
             </h2>
-            <div className="flex mt-4 gap-4">
+            <div className="flex mt-4 lg:gap-4 gap-2 flex-wrap">
               <input
                 type="email"
                 placeholder="Enter your email"

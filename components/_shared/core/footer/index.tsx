@@ -2,10 +2,11 @@ import assetConstants from "@/utils/assetConstants";
 import Image from "next/image";
 import { FaFacebook, FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import { motion } from "framer-motion";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="flex flex-col bg-neutral pt-32 justify-between lg:px-14 px-4 py-5 text-white relative">
+    <footer className="flex flex-col bg-neutral pt-48 justify-between lg:px-14 px-4 py-5 text-white relative">
       <div className="absolute top-0 left-0 right-0">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 280">
           <path
@@ -15,14 +16,19 @@ const Footer: React.FC = () => {
           ></path>
         </svg>
       </div>
-      <div className="w-full flex justify-center relative lg:scale-100 scale-75">
+      <motion.div
+        className="w-full flex justify-center relative lg:scale-100 scale-75"
+        initial={{ y: -200, opacity: 0 }}
+        whileInView={{ x: 0, y: 0, opacity: 1 }}
+        transition={{ duration: 0.5 }}
+      >
         <Image
           src={assetConstants.footerLogo}
           alt="logo"
           width={274}
           height={274}
         />
-      </div>
+      </motion.div>
       <div className="flex gap-4 my-4 py-12 flex-wrap justify-center">
         <div className="xl:w-[35%] w-full flex lg:justify-evenly justify-start gap-y-8 flex-wrap">
           <div className="flex flex-col gap-6 lg:w-[unset] w-1/2">

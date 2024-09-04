@@ -30,7 +30,7 @@ const Header: React.FC = () => {
 
   return (
     <motion.div
-      className="navbar text-white lg:justify-start justify-between gap-6 px-4 sm:px-12 py-5 sticky top-0 z-50 transition-all duration-300 ease-in-out transform"
+      className="navbar text-white  justify-between gap-6 px-4 sm:px-12 py-5 sticky top-0 z-50 transition-all duration-300 ease-in-out transform"
       style={{ backgroundColor }}
     >
       <div
@@ -54,8 +54,8 @@ const Header: React.FC = () => {
           />
         </div>
       </div>
-      <div className="hidden md:flex lg:w-3/5 w-full justify-evenly">
-        <ul className="flex w-full justify-start gap-24">
+      <div className="hidden md:flex lg:w-[70%] w-full justify-end">
+        <ul className="flex w-full justify-end gap-24">
           <li
             className="group cursor-pointer"
             onClick={() => handleNavigation("/")}

@@ -5,9 +5,11 @@ import { FaArrowRight } from "react-icons/fa";
 import { motion } from "framer-motion";
 import CountUp from "react-countup";
 import { useRef } from "react";
+import { useRouter } from "next/router";
 
 const HomeComponent = () => {
   const carouselRef = useRef<HTMLDivElement | null>(null);
+  const { push } = useRouter();
 
   return (
     <div className="min-h-screen w-full">
@@ -34,13 +36,15 @@ const HomeComponent = () => {
           </div>
           <div className="absolute bottom-0 left-0 right-0 bg-white h-1"></div>
         </div>
-        <div className="h-full lg:w-1/3 w-full flex flex-col justify-center items-start gap-6 lg:mx-56 mx-4 lg:pr-0 pr-6">
-          <span className="text-white lg:text-7xl text-4xl font-bold">
-            Elevate
-          </span>
-          <span className="text-white lg:text-7xl text-4xl ">
-            your Business
-          </span>
+        <div className="h-full lg:w-1/3 w-full flex flex-col justify-center items-start gap-6 lg:mx-56 mx-4 lg:pr-0 pr-6 relative z-10">
+          <div className="flex flex-col">
+            <span className="text-white lg:text-7xl text-4xl font-bold mr-2">
+              Elevate
+            </span>
+            <span className="text-white lg:text-7xl text-4xl ">
+              your Business
+            </span>
+          </div>
           <div>
             <span className="text-white lg:text-lg text-base font-bold mr-2">
               In today’s fast-paced world, why settle for less?
@@ -52,15 +56,16 @@ const HomeComponent = () => {
               candidate to drive your project forward, we’ve got you covered.
             </span>
           </div>
-          <div className="flex justify-center items-center">
-            <span className="text-white lg:text-xl text-base font-bold mr-4">
+          <div className="flex justify-center items-center text-white hover:text-yellow-500 cursor-pointer">
+            <span
+              className=" lg:text-xl text-base font-bold mr-4 "
+              style={{
+                letterSpacing: ".2em",
+              }}
+            >
               READY TO BE IMPRESSED ?
             </span>
-            <FaArrowRight
-              color="white"
-              size={20}
-              className="lg:w-[20px] w-[10px]"
-            />
+            <FaArrowRight size={20} className="lg:w-[20px] w-[10px]" />
           </div>
         </div>
       </section>
@@ -82,9 +87,9 @@ const HomeComponent = () => {
         <div className="w-full flex mt-8 gap-12 flex-wrap justify-center">
           {[
             { title: "IT JOB TRAINING", image: assetConstants.services },
-            { title: "DESIGN", image: assetConstants.services },
-            { title: "DEVELOPMENT", image: assetConstants.services },
-            { title: "IT CONSULTANT", image: assetConstants.services },
+            { title: "DESIGN", image: assetConstants.services2 },
+            { title: "DEVELOPMENT", image: assetConstants.services1 },
+            { title: "IT CONSULTANT", image: assetConstants.services3 },
           ].map((feature, index) => (
             <div
               key={index}
@@ -126,7 +131,7 @@ const HomeComponent = () => {
           ))}
         </div>
       </section>
-      <section className="lg:px-14 px-4 py-4 my-16 relative lg:h-[200vh] h-[unset]">
+      <section className="lg:px-14 px-4 py-4 my-16 relative lg:h-[230vh] h-[unset]">
         <div>
           <div className="absolute inset-0 opacity-40 left-0 top-0">
             <div className="h-full">
@@ -236,7 +241,14 @@ const HomeComponent = () => {
             />
           </motion.div>
           <div className="lg:w-[48%] w-full text-white flex flex-col justify-center mt-2">
-            <div className="text-xl  font-semibold mb-1">ABOUT US</div>
+            <div
+              className="text-xl mb-1"
+              style={{
+                letterSpacing: ".2em",
+              }}
+            >
+              ABOUT US
+            </div>
             <div className="mt-2">
               <h2 className="lg:text-4xl text-3xl font-bold mb-4">
                 Tailored software solutions that meet your
@@ -259,6 +271,9 @@ const HomeComponent = () => {
                 initial={{ x: 200, opacity: 0 }}
                 whileInView={{ x: 0, y: 0, opacity: 1 }}
                 transition={{ duration: 0.5 }}
+                onClick={() =>
+                  push("/contact-us", undefined, { shallow: true })
+                }
               >
                 Learn More
                 <FaArrowRight color="white" size={12} />
@@ -266,9 +281,16 @@ const HomeComponent = () => {
             </div>
           </div>
         </div>
-        <div className="lg:w-4/5 w-full lg:px-14 px-4 lg:py-16 py-4 flex flex-col justify-between items-center relative m-auto top-0 mt-16">
+        <div className="lg:w-4/5 w-full lg:px-14 px-4 lg:py-24 py-4 flex flex-col justify-between items-center relative m-auto top-0 mt-16">
           <div className="w-full flex justify-between text-white">
-            <span className="lg:text-3xl text-xl  text-nowrap">NEWS</span>
+            <span
+              className="lg:text-3xl text-xl  text-nowrap"
+              style={{
+                letterSpacing: ".1em",
+              }}
+            >
+              NEWS
+            </span>
             <span className="text-nowrap flex justify-center items-center gap-4">
               See All News
               <FaArrowRight size={12} color="white" />
@@ -280,32 +302,32 @@ const HomeComponent = () => {
           </span>
         </div>
       </section>
-      <section className="lg:-mt-48 mt-0 relative">
+      <section className="lg:-mt-96 -mt-20 relative">
         <div className="carousel w-full py-4 px-8" ref={carouselRef}>
           {[
             {
               title: "AI-Powered Cars Set to Revolutionize the Industry",
-              image: assetConstants.services,
+              image: assetConstants.news,
             },
             {
               title: "AI-Powered Cars Set to Revolutionize the Industry",
-              image: assetConstants.services,
+              image: assetConstants.news1,
             },
             {
               title: "AI-Powered Cars Set to Revolutionize the Industry",
-              image: assetConstants.services,
+              image: assetConstants.news2,
             },
             {
               title: "AI-Powered Cars Set to Revolutionize the Industry",
-              image: assetConstants.services,
+              image: assetConstants.news3,
             },
             {
               title: "AI-Powered Cars Set to Revolutionize the Industry",
-              image: assetConstants.services,
+              image: assetConstants.news1,
             },
             {
               title: "AI-Powered Cars Set to Revolutionize the Industry",
-              image: assetConstants.services,
+              image: assetConstants.news2,
             },
           ].map((feature, index) => (
             <div
@@ -358,7 +380,14 @@ const HomeComponent = () => {
       </section>
       <section className="lg:w-3/4 w-[95%] flex bg-black lg:px-14 px-4 lg:py-16 py-4 flex-wrap justify-between relative gradient-secondary-reverse m-auto rounded-3xl top-0 mt-16">
         <div className="lg:w-[48%] w-full text-white flex flex-col justify-center ">
-          <div className="text-xl  font-semibold mb-1">CAREER</div>
+          <div
+            className="text-xl mb-1"
+            style={{
+              letterSpacing: ".1em",
+            }}
+          >
+            CAREER
+          </div>
           <div className="mt-2">
             <h2 className="lg:text-4xl text-3xl font-bold mb-4">
               Expect a dynamic work environment and
@@ -381,6 +410,7 @@ const HomeComponent = () => {
               initial={{ x: -200, opacity: 0 }}
               whileInView={{ x: 0, y: 0, opacity: 1 }}
               transition={{ duration: 0.5 }}
+              onClick={() => push("/contact-us", undefined, { shallow: true })}
             >
               Join Us
               <FaArrowRight color="white" size={12} />
@@ -405,7 +435,14 @@ const HomeComponent = () => {
       <section className="w-full">
         <div className="lg:w-4/5 w-full lg:px-14 px-4 lg:py-16 py-4 flex flex-col justify-between items-center relative m-auto top-0 mt-16 text-black">
           <div className="w-full flex justify-between">
-            <span className="lg:text-3xl text-xl  text-nowrap">REVIEW</span>
+            <span
+              className="lg:text-3xl text-xl  text-nowrap"
+              style={{
+                letterSpacing: ".1em",
+              }}
+            >
+              REVIEW
+            </span>
             <span className="text-nowrap flex justify-center items-center gap-4">
               See All Reviews
               <FaArrowRight color="white" size={12} />
@@ -424,23 +461,23 @@ const HomeComponent = () => {
             },
             {
               title: "John Doe",
-              image: assetConstants.review,
+              image: assetConstants.review1,
             },
             {
               title: "John Doe",
-              image: assetConstants.review,
+              image: assetConstants.review2,
             },
             {
               title: "John Doe",
-              image: assetConstants.review,
+              image: assetConstants.review3,
             },
             {
               title: "John Doe",
-              image: assetConstants.review,
+              image: assetConstants.review4,
             },
             {
               title: "John Doe",
-              image: assetConstants.review,
+              image: assetConstants.review5,
             },
           ].map((feature, index) => (
             <div
@@ -501,7 +538,7 @@ const HomeComponent = () => {
           ))}
         </div>
       </section>
-      <section className="relative bg-primary lg:w-4/5 w-11/12 lg:px-10 px-4 lg:py-8 py-4 flex m-auto rounded-2xl my-16 justify-between items-center">
+      <section className="relative bg-primary lg:w-4/5 w-11/12 lg:px-10 px-4 lg:py-8 py-4 flex m-auto rounded-2xl my-28 justify-between items-center">
         <div className="absolute inset-0 opacity-20 left-0 top-0">
           <div className="h-full">
             <Image

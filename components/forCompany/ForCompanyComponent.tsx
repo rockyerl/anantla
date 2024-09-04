@@ -2,8 +2,11 @@ import assetConstants from "@/utils/assetConstants";
 import Image from "next/image";
 import { FaArrowRight } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { useRouter } from "next/router";
 
 const ForCompanyComponent = () => {
+  const { push } = useRouter();
+
   return (
     <div className="min-h-screen">
       <section className="h-[110vh] gradient-primary relative flex justify-center  items-center lg:flex-nowrap flex-wrap">
@@ -18,15 +21,7 @@ const ForCompanyComponent = () => {
               />
             </div>
           </div>
-          <div className="absolute bottom-0 left-0 right-0">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 280">
-              <path
-                fill="#ffffff"
-                fillOpacity="1"
-                d="M0,140C240,168,480,196,720,196C960,196,1200,168,1440,140L1440,280L0,280Z"
-              ></path>
-            </svg>
-          </div>
+
           <div className="absolute bottom-0 left-0 right-0 bg-white h-1"></div>
         </div>
         <div className="h-full lg:w-1/3 w-full flex flex-col justify-center items-start gap-6 lg:mx-32 mx-4 lg:pr-0 pr-6">
@@ -59,7 +54,7 @@ const ForCompanyComponent = () => {
       </section>
       <section className="w-4/5 flex m-auto my-16 justify-center items-center flex-col gap-8">
         <span className="lg:text-4xl text-2xl text-primary">
-          Companies we Work with
+          Companies We Work with
         </span>
         <div className="flex gap-16 overflow-x-auto">
           <Image
@@ -107,23 +102,23 @@ const ForCompanyComponent = () => {
             },
             {
               title: "John Doe",
-              image: assetConstants.review,
+              image: assetConstants.review1,
             },
             {
               title: "John Doe",
-              image: assetConstants.review,
+              image: assetConstants.review2,
             },
             {
               title: "John Doe",
-              image: assetConstants.review,
+              image: assetConstants.review3,
             },
             {
               title: "John Doe",
-              image: assetConstants.review,
+              image: assetConstants.review4,
             },
             {
               title: "John Doe",
-              image: assetConstants.review,
+              image: assetConstants.review5,
             },
           ].map((feature, index) => (
             <div
@@ -210,6 +205,7 @@ const ForCompanyComponent = () => {
               initial={{ x: -200, opacity: 0 }}
               whileInView={{ x: 0, y: 0, opacity: 1 }}
               transition={{ duration: 0.5 }}
+              onClick={() => push("/contact-us", undefined, { shallow: true })}
             >
               Join Us
               <FaArrowRight color="white" size={12} />

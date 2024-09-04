@@ -19,15 +19,6 @@ const ForJobSeekersComponent = () => {
               />
             </div>
           </div>
-          <div className="absolute bottom-0 left-0 right-0">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 280">
-              <path
-                fill="#ffffff"
-                fillOpacity="1"
-                d="M0,140C240,168,480,196,720,196C960,196,1200,168,1440,140L1440,280L0,280Z"
-              ></path>
-            </svg>
-          </div>
           <div className="absolute bottom-0 left-0 right-0 bg-white h-1"></div>
         </div>
         <div className="h-full lg:w-1/3 w-full flex flex-col justify-center items-start gap-6 lg:mx-32 mx-0 lg:pr-0 pr-6">
@@ -78,17 +69,17 @@ const ForJobSeekersComponent = () => {
         <div className="w-full flex mt-8 gap-12 flex-wrap justify-center">
           {[
             { title: "IT JOB TRAINING", image: assetConstants.services },
+            { title: "DESIGN", image: assetConstants.services2 },
+            { title: "DEVELOPMENT", image: assetConstants.services1 },
+            { title: "IT CONSULTANT", image: assetConstants.services3 },
             { title: "DESIGN", image: assetConstants.services },
-            { title: "DEVELOPMENT", image: assetConstants.services },
-            { title: "IT CONSULTANT", image: assetConstants.services },
-            { title: "IT JOB TRAINING", image: assetConstants.services },
+            { title: "DEVELOPMENT", image: assetConstants.services2 },
+            { title: "IT CONSULTANT", image: assetConstants.services1 },
+            { title: "IT JOB TRAINING", image: assetConstants.services3 },
             { title: "DESIGN", image: assetConstants.services },
-            { title: "DEVELOPMENT", image: assetConstants.services },
-            { title: "IT CONSULTANT", image: assetConstants.services },
-            { title: "IT JOB TRAINING", image: assetConstants.services },
-            { title: "DESIGN", image: assetConstants.services },
-            { title: "DEVELOPMENT", image: assetConstants.services },
-            { title: "IT CONSULTANT", image: assetConstants.services },
+            { title: "IT JOB TRAINING", image: assetConstants.services2 },
+            { title: "DEVELOPMENT", image: assetConstants.services1 },
+            { title: "IT CONSULTANT", image: assetConstants.services3 },
           ].map((feature, index) => (
             <div
               key={index}
