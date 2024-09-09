@@ -56,7 +56,10 @@ const HomeComponent = () => {
               candidate to drive your project forward, we’ve got you covered.
             </span>
           </div>
-          <div className="flex justify-center items-center text-white hover:text-yellow-500 cursor-pointer">
+          <div
+            className="flex justify-center items-center text-white hover:text-yellow-500 cursor-pointer"
+            onClick={() => push("/contact-us", undefined, { shallow: true })}
+          >
             <span
               className=" lg:text-xl text-base font-bold mr-4 "
               style={{
@@ -116,7 +119,7 @@ const HomeComponent = () => {
                     </p>
                   </div>
                 </div>
-                <div className="w-full flex justify-between items-center mt-4">
+                <div className="w-full flex justify-between items-center mt-4 text-gray-500 cursor-pointer ">
                   <span>LEARN MORE</span>
                   <button
                     type="button"
@@ -131,7 +134,7 @@ const HomeComponent = () => {
           ))}
         </div>
       </section>
-      <section className="lg:px-14 px-4 py-4 my-16 relative lg:h-[230vh] h-[unset]">
+      <section className="lg:px-14 px-4 py-4 my-16 relative md:h-[90rem] lg:h-[100rem] xl:h-[90rem] h-[unset]">
         <div>
           <div className="absolute inset-0 opacity-40 left-0 top-0">
             <div className="h-full">
@@ -251,7 +254,7 @@ const HomeComponent = () => {
             </div>
             <div className="mt-2">
               <h2 className="lg:text-4xl text-3xl font-bold mb-4">
-                Tailored software solutions that meet your
+                Tailored software solutions that meet your{" "}
                 <span className="text-[#87FBBD]">unique business</span> needs
               </h2>
               <p className=" mb-4">
@@ -281,7 +284,7 @@ const HomeComponent = () => {
             </div>
           </div>
         </div>
-        <div className="lg:w-4/5 w-full lg:px-14 px-4 lg:py-24 py-4 flex flex-col justify-between items-center relative m-auto top-0 mt-16">
+        <div className="lg:w-4/5 w-full lg:px-14 px-4 lg:py-24 py-4 flex flex-col justify-between items-center relative m-auto top-0 mt-12">
           <div className="w-full flex justify-between text-white">
             <span
               className="lg:text-3xl text-xl  text-nowrap"
@@ -302,7 +305,7 @@ const HomeComponent = () => {
           </span>
         </div>
       </section>
-      <section className="lg:-mt-96 -mt-20 relative">
+      <section className="lg:-mt-40 -mt-20 relative">
         <div className="carousel w-full py-4 px-8" ref={carouselRef}>
           {[
             {
@@ -363,7 +366,7 @@ const HomeComponent = () => {
                     </p>
                   </div>
                 </div>
-                <div className="w-full flex justify-between items-center mt-4">
+                <div className="w-full flex justify-between items-center mt-4 text-gray-500 cursor-pointer ">
                   <span>LEARN MORE</span>
                   <button
                     type="button"
@@ -378,7 +381,7 @@ const HomeComponent = () => {
           ))}
         </div>
       </section>
-      <section className="lg:w-3/4 w-[95%] flex bg-black lg:px-14 px-4 lg:py-16 py-4 flex-wrap justify-between relative gradient-secondary-reverse m-auto rounded-3xl top-0 mt-16">
+      <section className="lg:w-3/4 w-[95%] flex bg-black lg:px-14 px-4 lg:py-16 py-4 flex-wrap justify-between relative gradient-secondary-reverse m-auto rounded-3xl top-0 mt-24">
         <div className="lg:w-[48%] w-full text-white flex flex-col justify-center ">
           <div
             className="text-xl mb-1"
@@ -433,7 +436,7 @@ const HomeComponent = () => {
         </motion.div>
       </section>
       <section className="w-full">
-        <div className="lg:w-4/5 w-full lg:px-14 px-4 lg:py-16 py-4 flex flex-col justify-between items-center relative m-auto top-0 mt-16 text-black">
+        <div className="lg:w-4/5 w-full lg:px-14 px-4  flex flex-col justify-between items-center relative m-auto top-0 mt-28 text-black">
           <div className="w-full flex justify-between">
             <span
               className="lg:text-3xl text-xl  text-nowrap"

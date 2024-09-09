@@ -3,8 +3,11 @@ import Image from "next/image";
 import { FaFacebook, FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { motion } from "framer-motion";
+import { useRouter } from "next/router";
 
 const Footer: React.FC = () => {
+  const { push } = useRouter();
+
   return (
     <footer className="flex flex-col bg-neutral pt-48 justify-between lg:px-14 px-4 py-5 text-white relative">
       <div className="absolute top-0 left-0 right-0">
@@ -34,22 +37,27 @@ const Footer: React.FC = () => {
           <div className="flex flex-col gap-6 lg:w-[unset] w-1/2">
             <h3 className="font-bold">Services</h3>
             <ul className="space-y-4">
-              <li>Metaverse</li>
-              <li>Web3</li>
-              <li>High Tech</li>
-              <li>Cloud</li>
-              <li>Marketing</li>
+              <li
+                className="cursor-pointer hover:text-yellow-500"
+                onClick={() =>
+                  push("/for-jobseekers", undefined, { shallow: true })
+                }
+              >
+                For Jobseekers
+              </li>
+              <li
+                className="cursor-pointer hover:text-yellow-500"
+                onClick={() =>
+                  push("/for-companies", undefined, { shallow: true })
+                }
+              >
+                For Companies
+              </li>
             </ul>
           </div>
           <div className="flex flex-col gap-6 lg:w-[unset] w-1/2">
             <h3 className="font-bold">Careers</h3>
-            <ul className="space-y-4">
-              <li>Our Communities</li>
-              <li>Benefits</li>
-              <li>Environment</li>
-              <li>Careers Blog</li>
-              <li>Job Open</li>
-            </ul>
+            <ul className="space-y-4"></ul>
           </div>
         </div>
         <div className="xl:w-[35%] w-full flex flex-col gap-8">
@@ -63,13 +71,13 @@ const Footer: React.FC = () => {
               placeholder="Enter your email"
               className="flex-grow lg:px-4 px-2 lg:py-3 py-2 text-neutral rounded-lg focus:outline-none"
             />
-            <button
-              type="button"
+            <a
+              href="mailto:hr@anantla.com"
               title="subscribe"
-              className="bg-neutral text-white lg:px-4 px-2 lg:py-3 py-2 rounded-lg hover:bg-gray-900 transition-colors border border-white"
+              className="bg-neutral text-white lg:px-4 px-2 lg:py-3 py-2 rounded-lg hover:bg-gray-900 transition-colors border border-white flex items-center justify-center"
             >
               Subscribe
-            </button>
+            </a>
           </div>
           <p>
             By subscribing you agree to with our Privacy Policy and provide
@@ -115,9 +123,6 @@ const Footer: React.FC = () => {
           </li>
           <li>
             <span className="underline">Terms of Service</span>
-          </li>
-          <li>
-            <span className="underline">Cookies Settings</span>
           </li>
         </ul>
         <div className="w-1/6"></div>

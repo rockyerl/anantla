@@ -106,7 +106,7 @@ const ForJobSeekersComponent = () => {
                     </p>
                   </div>
                 </div>
-                <div className="w-full flex justify-between items-center mt-4">
+                <div className="w-full flex justify-between items-center mt-4 text-gray-500">
                   <span>LEARN MORE</span>
                   <button
                     type="button"

@@ -100,7 +100,7 @@ const ContactUsComponent = () => {
               </div>
               <div>
                 <a
-                  href="mailto:contact@example.com"
+                  href="mailto:hr@anantla.com"
                   title="Contact Us"
                   className="inline-block bg-primary text-white lg:px-16 px-2 lg:py-3 py-2 rounded-lg hover:bg-gray-900 transition-colors border border-white text-center"
                 >
