@@ -89,22 +89,43 @@ const HomeComponent = () => {
         </div>
         <div className="w-full flex mt-8 gap-12 flex-wrap justify-center">
           {[
-            { title: "IT JOB TRAINING", image: assetConstants.services },
-            { title: "DESIGN", image: assetConstants.services2 },
-            { title: "DEVELOPMENT", image: assetConstants.services1 },
-            { title: "IT CONSULTANT", image: assetConstants.services3 },
+            {
+              title: "Technical Support",
+              desc: "Get expert technical assistance for all your business needs.",
+              image:
+                "https://cdn.b12.io/client_media/LsnItvpe/a4b3c0f6-1724-11ef-9dc8-0242ac110002-jpg-regular_image.jpeg",
+            },
+            {
+              title: "CTO on Demand",
+              desc: "Access experienced Chief Technology Officers as per your requirement.",
+              image:
+                "https://cdn.b12.io/client_media/LsnItvpe/a4e539ce-1724-11ef-9dc8-0242ac110002-jpg-regular_image.jpeg",
+            },
+            {
+              title: "Project Management on Demand",
+              desc: "Efficient project management solutions tailored to your needs.",
+              image:
+                "https://cdn.b12.io/client_media/LsnItvpe/a4930abe-1724-11ef-9dc8-0242ac110002-jpg-regular_image.jpeg",
+            },
+            {
+              title: "Developer on Demand",
+              desc: "Get talented developers to bring your ideas to life.",
+              image:
+                "https://cdn.b12.io/client_media/LsnItvpe/a5c2e210-1724-11ef-9dc8-0242ac110002-jpg-regular_image.jpeg",
+            },
           ].map((feature, index) => (
             <div
               key={index}
               className="lg:w-[22%] md:w-[45%] w-full rounded-xl"
             >
               <div className="rounded-xl border border-white py-4 px-4 h-full flex items-end flex-col justify-between shadow-md">
-                <div className="rounded-lg mb-4">
+                <div className="rounded-lg mb-4 ">
                   <Image
                     src={feature.image}
                     alt={feature.title}
                     width={400}
                     height={200}
+                    className="object-cover h-[200px]"
                   />
                 </div>
                 <div className="block">
@@ -112,14 +133,10 @@ const HomeComponent = () => {
                     {feature.title}
                   </h3>
                   <div className="mt-4">
-                    <p className="text-sm mt-2">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua.
-                    </p>
+                    <p className="text-sm mt-2">{feature.desc}</p>
                   </div>
                 </div>
-                <div className="w-full flex justify-between items-center mt-4 text-gray-500 cursor-pointer ">
+                <div className="w-full flex justify-between items-center mt-4 text-gray-300 cursor-pointer ">
                   <span>LEARN MORE</span>
                   <button
                     type="button"
@@ -366,7 +383,7 @@ const HomeComponent = () => {
                     </p>
                   </div>
                 </div>
-                <div className="w-full flex justify-between items-center mt-4 text-gray-500 cursor-pointer ">
+                <div className="w-full flex justify-between items-center mt-4 text-gray-300 cursor-pointer ">
                   <span>LEARN MORE</span>
                   <button
                     type="button"
@@ -541,7 +558,7 @@ const HomeComponent = () => {
           ))}
         </div>
       </section>
-      <section className="relative bg-primary lg:w-4/5 w-11/12 lg:px-10 px-4 lg:py-8 py-4 flex m-auto rounded-2xl my-28 justify-between items-center">
+      <section className="relative bg-primary lg:w-2/3 w-11/12 lg:px-10 px-4 lg:py-8 py-4 flex m-auto rounded-2xl my-28 justify-between items-center">
         <div className="absolute inset-0 opacity-20 left-0 top-0">
           <div className="h-full">
             <Image
@@ -552,10 +569,13 @@ const HomeComponent = () => {
             />
           </div>
         </div>
-        <span className="text-white lg:text-4xl text-xl font-bold">
+        <span className="text-white lg:text-4xl text-xl font-bold relative">
           Be Part of Our Team!
         </span>
-        <button className="relative z-10 lg:scale-100 scale-75 bg-black justify-center text-white lg:px-8 px-4 py-2 rounded-md flex items-center gap-2 hover:bg-primary-dark transition-colors duration-300">
+        <button
+          className="relative z-10 lg:scale-100 scale-75 bg-black justify-center text-white lg:px-8 px-4 py-2 rounded-md flex items-center gap-2 hover:bg-primary-dark transition-colors duration-300"
+          onClick={() => push("/contact-us", undefined, { shallow: true })}
+        >
           <span className="text-nowrap">Join Us</span>
           <FaArrowRight color="white" size={12} />
         </button>

@@ -24,7 +24,7 @@ const ForCompanyComponent = () => {
 
           <div className="absolute bottom-0 left-0 right-0 bg-white h-1"></div>
         </div>
-        <div className="h-full lg:w-1/3 w-full flex flex-col justify-center items-start gap-6 lg:mx-32 mx-4 lg:pr-0 pr-6">
+        <div className="h-full lg:w-1/3 w-full flex flex-col justify-center items-start gap-6 lg:mx-32 mx-4 lg:pr-0 pr-6 relative">
           <span className="text-white lg:text-7xl text-4xl font-bold">
             Hire smarter,
           </span>
@@ -37,10 +37,15 @@ const ForCompanyComponent = () => {
             </span>
           </div>
           <div className="flex justify-center items-center">
-            <span className="text-white lg:text-xl text-lg font-bold mr-4">
-              GET STARTED
-            </span>
-            <FaArrowRight color="white" size={20} />
+            <div
+              className="flex justify-center items-center text-white hover:text-yellow-500 cursor-pointer"
+              onClick={() => push("/contact-us", undefined, { shallow: true })}
+            >
+              <span className=" lg:text-xl text-lg font-bold mr-4">
+                GET STARTED
+              </span>
+              <FaArrowRight  size={20} />
+            </div>
           </div>
         </div>
         <div className="w-[35%] relative -mb-28 lg:block hidden">

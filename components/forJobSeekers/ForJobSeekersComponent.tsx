@@ -3,8 +3,11 @@ import Image from "next/image";
 import { FaArrowRight } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { BsArrowRightShort } from "react-icons/bs";
+import { useRouter } from "next/router";
 
 const ForJobSeekersComponent = () => {
+  const { push } = useRouter();
+
   return (
     <div className="min-h-screen">
       <section className="h-[110vh] gradient-primary relative flex justify-center  items-center lg:flex-nowrap flex-wrap">
@@ -21,8 +24,10 @@ const ForJobSeekersComponent = () => {
           </div>
           <div className="absolute bottom-0 left-0 right-0 bg-white h-1"></div>
         </div>
-        <div className="h-full lg:w-1/3 w-full flex flex-col justify-center items-start gap-6 lg:mx-32 mx-0 lg:pr-0 pr-6">
-          <span className="text-white lg:text-7xl text-4xl font-bold">Explore Roles</span>
+        <div className="h-full lg:w-1/3 w-full flex flex-col justify-center items-start gap-6 lg:mx-32 mx-0 lg:pr-0 pr-6 relative">
+          <span className="text-white lg:text-7xl text-4xl font-bold">
+            Explore Roles
+          </span>
           <span className="text-white lg:text-7xl text-4xl ">on Anantla</span>
           <div>
             <span className="text-white lg:text-lg text-base">
@@ -30,11 +35,14 @@ const ForJobSeekersComponent = () => {
               live and work from anywhere. 
             </span>
           </div>
-          <div className="flex justify-center items-center">
-            <span className="text-white lg:text-xl text-lg font-bold mr-4">
+          <div
+            className="flex justify-center items-center text-white hover:text-yellow-500 cursor-pointer"
+            onClick={() => push("/contact-us", undefined, { shallow: true })}
+          >
+            <span className=" lg:text-xl text-lg font-bold mr-4">
               GET STARTED
             </span>
-            <FaArrowRight color="white" size={20} />
+            <FaArrowRight  size={20} />
           </div>
         </div>
         <div className="w-[35%] relative -mb-28 lg:block hidden">
@@ -68,22 +76,46 @@ const ForJobSeekersComponent = () => {
         </div>
         <div className="w-full flex mt-8 gap-12 flex-wrap justify-center">
           {[
-            { title: "IT JOB TRAINING", image: assetConstants.services },
-            { title: "DESIGN", image: assetConstants.services2 },
-            { title: "DEVELOPMENT", image: assetConstants.services1 },
-            { title: "IT CONSULTANT", image: assetConstants.services3 },
-            { title: "DESIGN", image: assetConstants.services },
-            { title: "DEVELOPMENT", image: assetConstants.services2 },
-            { title: "IT CONSULTANT", image: assetConstants.services1 },
-            { title: "IT JOB TRAINING", image: assetConstants.services3 },
-            { title: "DESIGN", image: assetConstants.services },
-            { title: "IT JOB TRAINING", image: assetConstants.services2 },
-            { title: "DEVELOPMENT", image: assetConstants.services1 },
-            { title: "IT CONSULTANT", image: assetConstants.services3 },
+            {
+              title: "Technical Support",
+              desc: "Get expert technical assistance for all your business needs.",
+              image:
+                "https://cdn.b12.io/client_media/LsnItvpe/a4b3c0f6-1724-11ef-9dc8-0242ac110002-jpg-regular_image.jpeg",
+            },
+            {
+              title: "CTO on Demand",
+              desc: "Access experienced Chief Technology Officers as per your requirement.",
+              image:
+                "https://cdn.b12.io/client_media/LsnItvpe/a4e539ce-1724-11ef-9dc8-0242ac110002-jpg-regular_image.jpeg",
+            },
+            {
+              title: "Project Management on Demand",
+              desc: "Efficient project management solutions tailored to your needs.",
+              image:
+                "https://cdn.b12.io/client_media/LsnItvpe/a4930abe-1724-11ef-9dc8-0242ac110002-jpg-regular_image.jpeg",
+            },
+            {
+              title: "Developer on Demand",
+              desc: "Get talented developers to bring your ideas to life.",
+              image:
+                "https://cdn.b12.io/client_media/LsnItvpe/a5c2e210-1724-11ef-9dc8-0242ac110002-jpg-regular_image.jpeg",
+            },
+            {
+              title: "Startup Assistance",
+              desc: "Guidance and support for scaling your startup to new heights.",
+              image:
+                "https://cdn.b12.io/client_media/LsnItvpe/a476a5ea-1724-11ef-9dc8-0242ac110002-jpg-regular_image.jpeg",
+            },
+            {
+              title: "Software Development Training",
+              desc: "Comprehensive training programs with job guarantee for aspiring developers.",
+              image:
+                "https://cdn.b12.io/client_media/LsnItvpe/a42e943a-1724-11ef-9dc8-0242ac110002-jpg-regular_image.jpeg",
+            },
           ].map((feature, index) => (
             <div
               key={index}
-              className="lg:w-[22%] md:w-[48%] w-full rounded-xl"
+              className="lg:w-[25%] md:w-[48%] w-full rounded-xl"
             >
               <div className="rounded-xl border border-white py-4 px-4 h-full flex items-end flex-col justify-between shadow-md">
                 <div className="rounded-lg mb-4">
@@ -92,6 +124,7 @@ const ForJobSeekersComponent = () => {
                     alt={feature.title}
                     width={400}
                     height={200}
+                    className="object-cover h-[200px]"
                   />
                 </div>
                 <div className="block">
@@ -106,7 +139,7 @@ const ForJobSeekersComponent = () => {
                     </p>
                   </div>
                 </div>
-                <div className="w-full flex justify-between items-center mt-4 text-gray-500">
+                <div className="w-full flex justify-between items-center mt-4 text-gray-300">
                   <span>LEARN MORE</span>
                   <button
                     type="button"
