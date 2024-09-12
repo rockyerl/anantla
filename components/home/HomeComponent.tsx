@@ -311,91 +311,11 @@ const HomeComponent = () => {
             >
               NEWS
             </span>
-            <span className="text-nowrap flex justify-center items-center gap-4">
-              See All News
-              <FaArrowRight size={12} color="white" />
-            </span>
           </div>
           <span className="w-full mt-10 lg:text-4xl text-xl  lg:text-left text-center text-white">
             At Anantla Tech Ventures, we empower you with IT training, tailored
             software solutions, and consulting to unlock your full potential.
           </span>
-        </div>
-      </section>
-      <section className="lg:-mt-40 -mt-20 relative">
-        <div className="carousel w-full py-4 px-8" ref={carouselRef}>
-          {[
-            {
-              title: "AI-Powered Cars Set to Revolutionize the Industry",
-              image: assetConstants.news,
-            },
-            {
-              title: "AI-Powered Cars Set to Revolutionize the Industry",
-              image: assetConstants.news1,
-            },
-            {
-              title: "AI-Powered Cars Set to Revolutionize the Industry",
-              image: assetConstants.news2,
-            },
-            {
-              title: "AI-Powered Cars Set to Revolutionize the Industry",
-              image: assetConstants.news3,
-            },
-            {
-              title: "AI-Powered Cars Set to Revolutionize the Industry",
-              image: assetConstants.news1,
-            },
-            {
-              title: "AI-Powered Cars Set to Revolutionize the Industry",
-              image: assetConstants.news2,
-            },
-          ].map((feature, index) => (
-            <div
-              key={index}
-              className="carousel-item lg:w-[21%] md:w-[48%] w-full rounded-xl mx-4"
-            >
-              <div className="rounded-xl border bg-white border-white py-4 px-4 h-full flex items-end flex-col justify-between shadow-lg">
-                <div className="rounded-lg mb-4">
-                  <Image
-                    src={feature.image}
-                    alt={feature.title}
-                    width={400}
-                    height={180}
-                    className="h-[180px]"
-                  />
-                </div>
-                <div className="block">
-                  <h3 className="text-xl font-bold text-black">
-                    {feature.title}
-                  </h3>
-
-                  <div className="mt-2">
-                    <span className="inline-block bg-[#CFF7D3] rounded-full px-3 py-1 text-sm font-semibold text-primary mr-2 mb-2">
-                      Automotive
-                    </span>
-                  </div>
-
-                  <div className="mt-2">
-                    <p className="text-sm mt-2">
-                      The automotive industry is on the brink of a paradigm
-                      shift as artificial intelligence (AI) technology. The
-                      automotive industry
-                    </p>
-                  </div>
-                </div>
-                <div className="w-full flex justify-between items-center mt-4 text-gray-300 cursor-pointer ">
-                  <span>LEARN MORE</span>
-                  <button
-                    type="button"
-                    title="learn"
-                    className="px-4 py-2 rounded-md "
-                  >
-                    <BsArrowRightShort size={28} />
-                  </button>
-                </div>
-              </div>
-            </div>
-          ))}
         </div>
       </section>
       <section className="lg:w-3/4 w-[95%] flex bg-black lg:px-14 px-4 lg:py-16 py-4 flex-wrap justify-between relative gradient-secondary-reverse m-auto rounded-3xl top-0 mt-24">
@@ -463,10 +383,6 @@ const HomeComponent = () => {
             >
               REVIEW
             </span>
-            <span className="text-nowrap flex justify-center items-center gap-4">
-              See All Reviews
-              <FaArrowRight color="white" size={12} />
-            </span>
           </div>
           <span className="w-full mt-10 lg:text-4xl text-xl text-left ">
             Meet some of the 5,000+ rockstars who have found a rewarding remote
@@ -476,33 +392,37 @@ const HomeComponent = () => {
         <div className="carousel w-full py-4 lg:px-0 px-8" ref={carouselRef}>
           {[
             {
-              title: "John Doe",
+              title: "Michael Chen",
+              desc: "I've found my dream job here. The flexibility of remote work combined with challenging projects has boosted my career growth exponentially.",
+              rating: 5,
+              job: "Senior Software Engineer",
               image: assetConstants.review,
             },
             {
-              title: "John Doe",
+              title: "Emily Johnson",
+              desc: "The collaborative environment and cutting-edge technologies we work with have made this the most rewarding job I've ever had.",
+              rating: 4,
+              job: "Full Stack Developer",
               image: assetConstants.review1,
             },
             {
-              title: "John Doe",
+              title: "Sophia Rodriguez",
+              desc: "I appreciate the work-life balance and the opportunity to work with a diverse, global team. It's been an enriching experience.",
+              rating: 3,
+              job: "DevOps Engineer",
               image: assetConstants.review2,
             },
             {
-              title: "John Doe",
+              title: "Alex Patel",
+              desc: "The continuous learning opportunities and mentorship programs have significantly accelerated my professional development.",
+              rating: 5,
+              job: "Data Scientist",
               image: assetConstants.review3,
-            },
-            {
-              title: "John Doe",
-              image: assetConstants.review4,
-            },
-            {
-              title: "John Doe",
-              image: assetConstants.review5,
             },
           ].map((feature, index) => (
             <div
               key={index}
-              className="carousel-item lg:w-[40%] md:w-[48%] w-full rounded-xl mx-4"
+              className="carousel-item lg:w-[50%] md:w-[48%] w-full rounded-xl mx-4"
             >
               <div className="rounded-xl border bg-white border-white py-4 px-4 h-full flex lg:flex-row flex-col gap-6 items-end justify-between shadow-md">
                 <div className="rounded-lg mb-4">
@@ -521,7 +441,7 @@ const HomeComponent = () => {
                     </h3>
                     <div className="">
                       <span className="inline-block bg-[#F5F5F5] rounded-full px-3 py-1 text-sm font-semibold text-[#757575] mr-2 mb-2">
-                        Automotive
+                        {feature.job}
                       </span>
                     </div>
                   </div>
@@ -529,7 +449,11 @@ const HomeComponent = () => {
                     {[1, 2, 3, 4, 5].map((star) => (
                       <svg
                         key={star}
-                        className="w-6 h-6 text-yellow-400 fill-current"
+                        className={`w-6 h-6 ${
+                          star <= feature.rating
+                            ? "text-yellow-400"
+                            : "text-gray-300"
+                        } fill-current`}
                         viewBox="0 0 24 24"
                       >
                         <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
@@ -538,11 +462,7 @@ const HomeComponent = () => {
                   </div>
 
                   <div className="mt-2">
-                    <p className="text-sm">
-                      Working here has been an incredible experience. The team
-                      is supportive, the projects are challenging, and there is
-                      always room for growth.
-                    </p>
+                    <p className="text-sm">{feature.desc}</p>
                   </div>
 
                   <Image
@@ -558,7 +478,7 @@ const HomeComponent = () => {
           ))}
         </div>
       </section>
-      <section className="relative bg-primary lg:w-2/3 w-11/12 lg:px-10 px-4 lg:py-8 py-4 flex m-auto rounded-2xl my-28 justify-between items-center">
+      <section className="relative bg-primary lg:w-2/5 w-11/12 lg:px-10 px-4 lg:py-8 py-4 flex m-auto rounded-2xl my-28 justify-between items-center">
         <div className="absolute inset-0 opacity-20 left-0 top-0">
           <div className="h-full">
             <Image
@@ -569,7 +489,7 @@ const HomeComponent = () => {
             />
           </div>
         </div>
-        <span className="text-white lg:text-4xl text-xl font-bold relative">
+        <span className="text-white lg:text-3xl text-xl font-bold relative">
           Be Part of Our Team!
         </span>
         <button

@@ -74,7 +74,7 @@ const ForJobSeekersComponent = () => {
             remote workers around the globe.
           </span>
         </div>
-        <div className="w-full flex mt-8 gap-12 flex-wrap justify-center">
+        <div className="w-full flex mt-8 py-4 gap-12 flex-wrap justify-center">
           {[
             {
               title: "Technical Support",
@@ -133,9 +133,7 @@ const ForJobSeekersComponent = () => {
                   </h3>
                   <div className="mt-4">
                     <p className="text-sm mt-2">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua.
+                      {feature.desc}
                     </p>
                   </div>
                 </div>

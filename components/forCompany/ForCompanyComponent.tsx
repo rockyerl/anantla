@@ -44,7 +44,7 @@ const ForCompanyComponent = () => {
               <span className=" lg:text-xl text-lg font-bold mr-4">
                 GET STARTED
               </span>
-              <FaArrowRight  size={20} />
+              <FaArrowRight size={20} />
             </div>
           </div>
         </div>
@@ -102,28 +102,32 @@ const ForCompanyComponent = () => {
         <div className="w-full py-4 gap-4 flex flex-wrap justify-center">
           {[
             {
-              title: "John Doe",
+              title: "Michael Chen",
+              desc: "I've found my dream job here. The flexibility of remote work combined with challenging projects has boosted my career growth exponentially.",
+              rating: 5,
+              job: "Senior Software Engineer",
               image: assetConstants.review,
             },
             {
-              title: "John Doe",
+              title: "Emily Johnson",
+              desc: "The collaborative environment and cutting-edge technologies we work with have made this the most rewarding job I've ever had.",
+              rating: 4,
+              job: "Full Stack Developer",
               image: assetConstants.review1,
             },
             {
-              title: "John Doe",
+              title: "Sophia Rodriguez",
+              desc: "I appreciate the work-life balance and the opportunity to work with a diverse, global team. It's been an enriching experience.",
+              rating: 3,
+              job: "DevOps Engineer",
               image: assetConstants.review2,
             },
             {
-              title: "John Doe",
+              title: "Alex Patel",
+              desc: "The continuous learning opportunities and mentorship programs have significantly accelerated my professional development.",
+              rating: 5,
+              job: "Data Scientist",
               image: assetConstants.review3,
-            },
-            {
-              title: "John Doe",
-              image: assetConstants.review4,
-            },
-            {
-              title: "John Doe",
-              image: assetConstants.review5,
             },
           ].map((feature, index) => (
             <div
@@ -141,13 +145,13 @@ const ForCompanyComponent = () => {
                   />
                 </div>
                 <div className="flex flex-col justify-start items-start h-full">
-                  <div className="flex flex-wrap gap-4 mt-2">
+                  <div className="flex flex-col gap-4 mt-2">
                     <h3 className="text-xl font-bold text-black">
                       {feature.title}
                     </h3>
                     <div className="">
                       <span className="inline-block bg-[#F5F5F5] rounded-full px-3 py-1 text-sm font-semibold text-[#757575] mr-2 mb-2">
-                        Automotive
+                        {feature.job}
                       </span>
                     </div>
                   </div>
@@ -155,7 +159,11 @@ const ForCompanyComponent = () => {
                     {[1, 2, 3, 4, 5].map((star) => (
                       <svg
                         key={star}
-                        className="w-6 h-6 text-yellow-400 fill-current"
+                        className={`w-6 h-6 ${
+                          star <= feature.rating
+                            ? "text-yellow-400"
+                            : "text-gray-300"
+                        } fill-current`}
                         viewBox="0 0 24 24"
                       >
                         <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
@@ -164,20 +172,8 @@ const ForCompanyComponent = () => {
                   </div>
 
                   <div className="mt-2">
-                    <p className="text-sm">
-                      Working here has been an incredible experience. The team
-                      is supportive, the projects are challenging, and there is
-                      always room for growth.
-                    </p>
+                    <p className="text-sm">{feature.desc}</p>
                   </div>
-
-                  <Image
-                    src={assetConstants.webFlow}
-                    alt="review"
-                    width={130}
-                    height={60}
-                    className="mt-2 w-[130px]"
-                  />
                 </div>
               </div>
             </div>
