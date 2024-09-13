@@ -115,7 +115,7 @@ const Footer: React.FC = () => {
       <div className="border-b-2 mb-4" />
       <div className="flex justify-between items-center my-4 flex-wrap gap-y-4 lg:w-4/5 w-full m-auto">
         <div className="text-sm ">
-          © {new Date().getFullYear()} Your Company Name. All rights reserved.
+          © {new Date().getFullYear()} Anantla All rights reserved.
         </div>
         <ul className="flex space-x-4 text-sm ">
           <li>

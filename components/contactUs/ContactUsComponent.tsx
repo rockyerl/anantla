@@ -54,7 +54,7 @@ const ContactUsComponent = () => {
       <section className="lg:w-3/4 w-[95%] flex bg-white shadow-lg lg:px-14 px-4 lg:py-16 py-4 flex-wrap justify-between relative m-auto rounded-3xl top-0 lg:-mt-[22rem] mt-0">
         <motion.div
           className="lg:w-1/2 w-full relative lg:h-[unset] md:h-96 h-72"
-          initial={{ x: 200, opacity: 0 }}
+          initial={{ x: -200, opacity: 0 }}
           whileInView={{ x: 0, y: 0, opacity: 1 }}
           transition={{ duration: 0.5 }}
         >

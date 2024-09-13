@@ -464,14 +464,6 @@ const HomeComponent = () => {
                   <div className="mt-2">
                     <p className="text-sm">{feature.desc}</p>
                   </div>
-
-                  <Image
-                    src={assetConstants.webFlow}
-                    alt="review"
-                    width={130}
-                    height={60}
-                    className="mt-2 w-[130px]"
-                  />
                 </div>
               </div>
             </div>
