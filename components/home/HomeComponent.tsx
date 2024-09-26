@@ -354,7 +354,9 @@ const HomeComponent = () => {
               transition={{ duration: 0.5 }}
               onClick={() =>
                 document !== null &&
-                document.getElementById("join_us_modal")?.showModal()
+                (
+                  document.getElementById("join_us_modal") as HTMLDialogElement
+                )?.showModal()
               }
             >
               Join Us
@@ -494,7 +496,9 @@ const HomeComponent = () => {
           className="relative z-10 lg:scale-100 scale-75 bg-black justify-center text-white lg:px-8 px-4 py-2 rounded-md flex items-center gap-2 hover:bg-primary-dark transition-colors duration-300"
           onClick={() =>
             document !== null &&
-            document.getElementById("join_us_modal")?.showModal()
+            (
+              document.getElementById("join_us_modal") as HTMLDialogElement
+            )?.showModal()
           }
         >
           <span className="text-nowrap">Join Us</span>
