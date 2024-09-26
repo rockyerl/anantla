@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import CountUp from "react-countup";
 import { useRef } from "react";
 import { useRouter } from "next/router";
+import ContactUsModal from "../_shared/common/contactUsModal";
 
 const HomeComponent = () => {
   const carouselRef = useRef<HTMLDivElement | null>(null);
@@ -13,6 +14,7 @@ const HomeComponent = () => {
 
   return (
     <div className="min-h-screen w-full">
+      <ContactUsModal />
       <section className="lg:h-[110vh] h-[100vh] gradient-primary relative">
         <div>
           <div className="absolute inset-0 opacity-20 left-0 top-0">
@@ -350,13 +352,17 @@ const HomeComponent = () => {
               initial={{ x: -200, opacity: 0 }}
               whileInView={{ x: 0, y: 0, opacity: 1 }}
               transition={{ duration: 0.5 }}
-              onClick={() => push("/contact-us", undefined, { shallow: true })}
+              onClick={() =>
+                document !== null &&
+                document.getElementById("join_us_modal")?.showModal()
+              }
             >
               Join Us
               <FaArrowRight color="white" size={12} />
             </motion.button>
           </div>
         </div>
+
         <motion.div
           className="lg:w-1/2 w-full relative lg:h-[unset] md:h-96 h-72 mt-4"
           initial={{ x: 200, opacity: 0 }}
@@ -486,7 +492,10 @@ const HomeComponent = () => {
         </span>
         <button
           className="relative z-10 lg:scale-100 scale-75 bg-black justify-center text-white lg:px-8 px-4 py-2 rounded-md flex items-center gap-2 hover:bg-primary-dark transition-colors duration-300"
-          onClick={() => push("/contact-us", undefined, { shallow: true })}
+          onClick={() =>
+            document !== null &&
+            document.getElementById("join_us_modal")?.showModal()
+          }
         >
           <span className="text-nowrap">Join Us</span>
           <FaArrowRight color="white" size={12} />
