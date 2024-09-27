@@ -9,10 +9,68 @@ import {
 } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { FaXTwitter } from "react-icons/fa6";
+import useStoreSelf from "@/stores";
+import { useState } from "react";
 
 const ContactUsComponent = () => {
+  const { sendEmails, loading } = useStoreSelf((state) => state.mailer);
+  const { setResponse } = useStoreSelf((state) => state.response);
+  const { code, message } = useStoreSelf((state) => state.response);
+
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    await sendEmails({
+      from: {
+        email: "admin@anantla.com",
+        name: "Website Contact Anantla",
+      },
+      to: [
+        {
+          email: "hr@anantla.com",
+          name: "HR Anantla",
+        },
+      ],
+      subject: `Website Contact Anantla from ${formData.name}`,
+      html_part: `<html>
+        <head></head>
+        <body>
+              <h2>From: ${formData.name}</h2>
+              <p>Email: ${formData.email}</p>
+              <p>Message:</p>
+              <p>${formData.message}</p>
+        </body>
+        </html>`,
+    })
+      .then((res) => {
+        console.log(res?.data);
+        setResponse(200, res?.data?.message);
+      })
+      .catch((err) => {
+        console.log(err?.data);
+        setResponse(500, 'Failed to send email please try again later');
+      });
+  };
+
   return (
     <div className="min-h-screen">
+      
       <section className="h-[110vh] gradient-primary relative">
         <div>
           <div className="absolute inset-0 opacity-20 left-0 top-0">
@@ -72,13 +130,19 @@ const ContactUsComponent = () => {
               Contact Us <span className="text-primary">Anytime!</span>
             </h2>
             <span className="text-lg">
-              We’re dedicated to providing you with the best support possible.
+              We`re dedicated to providing you with the best support possible.
             </span>
-            <div className="flex flex-col mt-4 gap-6 w-full">
+            <form
+              onSubmit={handleSubmit}
+              className="flex flex-col mt-4 gap-6 w-full"
+            >
               <div className="flex flex-col w-full gap-2">
                 <h3>Name</h3>
                 <input
                   type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleInputChange}
                   placeholder="Enter your name"
                   className="lg:px-4 px-2 lg:py-3 py-2 text-neutral rounded-lg focus:outline-none border"
                 />
@@ -87,6 +151,9 @@ const ContactUsComponent = () => {
                 <h3>Email</h3>
                 <input
                   type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleInputChange}
                   placeholder="Enter your email"
                   className="lg:px-4 px-2 lg:py-3 py-2 text-neutral rounded-lg focus:outline-none border"
                 />
@@ -94,20 +161,23 @@ const ContactUsComponent = () => {
               <div className="flex flex-col w-full gap-2">
                 <h3>Message</h3>
                 <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleInputChange}
                   placeholder="Enter your message"
                   className="lg:px-4 px-2 lg:py-3 py-2 text-neutral rounded-lg focus:outline-none resize-none h-32 border"
                 ></textarea>
               </div>
               <div>
-                <a
-                  href="mailto:hr@anantla.com"
-                  title="Contact Us"
+                <button
+                  type="submit"
+                  disabled={loading}
                   className="inline-block bg-primary text-white lg:px-16 px-2 lg:py-3 py-2 rounded-lg hover:bg-gray-900 transition-colors border border-white text-center"
                 >
-                  Contact Us
-                </a>
+                  {loading ? "Sending..." : "Contact Us"}
+                </button>
               </div>
-            </div>
+            </form>
           </div>
         </div>
       </section>
