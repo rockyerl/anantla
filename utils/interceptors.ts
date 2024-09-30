@@ -16,7 +16,7 @@ const logResponse = (res: AxiosResponse) => {
 };
 
 const clientService: AxiosInstance = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_API || "http://localhost",
+  baseURL: process.env.NEXT_PUBLIC_API || "https://anantla.ipzmarketing.com/api/v1/",
   headers: {
     "Content-Type": "application/json",
     "Accept": "application/json",
